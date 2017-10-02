@@ -2,7 +2,7 @@
   "name": "json-schema-builder",
   "version": "1.0.0",
   "description": "A simple GUI tool to enable designing and building JSON schemas",
-  "main": "dist/jsonSchema.js",
+  "main": "src/jsonSchema.js",
   "directories": {
     "doc": "docs"
   },
