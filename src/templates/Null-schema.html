@@ -1,0 +1,32 @@
+<div style="margin-left:20px;">
+  <div class="js-row" ng-class="showDetailsPan?'t_bg':''" ng-init="showDetailsPan=false">
+      <span ng-hide="entity.$root$"><input class="model-key" type="text" ng-model="entity._key" />:</span>
+      <span model-type-selector></span>
+      <div class="model-detail" ng-hide="showDetailsPan" ng-click="showDetailsPan=true"><span class="glyphicon glyphicon-pencil"></span></div>
+      <div class="model-done" ng-show="showDetailsPan" ng-click="showDetailsPan=false"><span class="glyphicon glyphicon-ok"></span></div>
+      <div class="model-remove" ng-if="!entity.$root$"  ng-click="removeEntity(entity)"><span class="glyphicon glyphicon-remove"></span></div>
+  </div>
+  <div class="model-det-cont" ng-show="showDetailsPan">
+      <div class="col-xs-6" style="border-right:1px solid #9E9E9E">
+          <div class="t_color bold">Basic Info</div>
+          <div class="">
+          <form class="form-horizontal form-compact model-detail-form" name="detailForm" role="form">
+              <div class="form-group" ng-if="!entity.$root$">
+                  <label class="control-label col-xs-2">Name:</label>
+                  <div class="col-xs-9">
+                      <input type="text" class="form-control sm detail-ip" id="foldName" placeholder="Field Name" ng-model="entity._key">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="control-label col-xs-2">Description:</label>
+                  <div class="col-xs-9">
+                      <textarea class="form-control" ng-model="entity._description"></textarea>
+                  </div>
+              </div>
+          </form>
+          </div>
+      </div>
+      <div class="col-xs-6">
+      </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<span uib-dropdown on-toggle="modelSelectorOpened(open,entity)">
+  <button type="button" uib-dropdown-toggle class="btn btn-link btn-href model-selector" ng-class="entity._type">{{entity._type}}<span class="caret"></span></button>
+  <div class="dropdown-menu model-type-selector" uib-dropdown-menu>
+      <div ng-include="'model-selector-schema.html'"></div>
+  </div>
+</span>

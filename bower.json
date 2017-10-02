@@ -1,7 +1,10 @@
 {
   "name": "json-schema-builder",
   "description": "A simple GUI tool to enable designing and building JSON schemas",
-  "main": "src/jsonSchema.js",
+  "main": [
+    "dist/jsonSchema.js",
+    "dist/jsonSchema.css"
+  ],
   "authors": [
     {
       "name": "Bijay Dash",
@@ -25,6 +28,9 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "docs",
+    "grunt"
   ]
 }

@@ -1,0 +1,22 @@
+<div>
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Designer">
+
+            <div >
+                <div class="main" style="background: #fff;padding:20px">
+                    <div ng-include="''+$data._type+'-schema.html'"></div>
+                </div>
+            </div>
+
+
+
+        </uib-tab>
+        <uib-tab index="1" heading="JSON Schema" select="convertObj2Schema()">
+            <pre>{{$schema}}</pre>
+        </uib-tab>
+        <uib-tab index="2" heading="Example">
+            <textarea class="form-control"></textarea>
+        </uib-tab>
+    </uib-tabset>
+    
+</div>
