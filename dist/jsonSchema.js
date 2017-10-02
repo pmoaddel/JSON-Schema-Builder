@@ -10,7 +10,7 @@ function jsonSchemaDirective() {
         restrict: 'A',
         scope: {
             $data: '=data'},
-        templateUrl: 'templates/jsonSchema.html',
+        templateUrl: 'json-schema/templates/jsonSchema.html',
         link: function ($scope, ele, attr, model) {
 
             var MODELS = {};
@@ -430,7 +430,7 @@ modelTypeSelectorDirective.$inject = ['$rootScope'];
 function modelTypeSelectorDirective($rootScope) {
     return{
         restrict: 'A',
-        templateUrl: 'templates/modelTypeSelector.html',
+        templateUrl: 'json-schema/templates/modelTypeSelector.html',
         link: function (scope, ele, attr, model) {
 
         }
