@@ -1,0 +1,30 @@
+{
+  "name": "json-schema-builder",
+  "description": "A simple GUI tool to enable designing and building JSON schemas",
+  "main": "dist/jsonSchema.js",
+  "authors": [
+    {
+      "name": "Bijay Dash",
+      "homepage": "https://github.com/bjdash"
+    },
+    {
+      "name": "Brian M. Herold",
+      "email": "bmherold@gmail.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "JSON",
+    "schema",
+    "builder",
+    "js"
+  ],
+  "homepage": "https://github.com/bmherold/JSON-Schema-Builder",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
