@@ -6,7 +6,9 @@ module.exports =
 
   dev: [
   	'clean'
-  	'buildJS'
+    'copy:dist'    
+  	'distJS'
+    'watch'
   ]
 
   dist: [
@@ -18,6 +20,7 @@ module.exports =
   buildJS: [
   	# 'coffee'
     'ngtemplates'
+    'concat'
   ]
 
   distJS: [

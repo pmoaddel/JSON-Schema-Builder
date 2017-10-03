@@ -4,9 +4,9 @@ module.exports = (grunt) ->
 		src: '**.html'
 		dest: 'dist/templates.js'
 		options:
-			module: 'json-schema'
+			module: 'json-schema-builder'
 			# htmlmin:
 			# 	collapseWhitespace: true
-			prefix: 'json-schema/templates'
+			prefix: 'json-schema-builder/templates'
   }
     

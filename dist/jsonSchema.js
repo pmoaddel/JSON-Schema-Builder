@@ -1,16 +1,16 @@
 /* global angular */
 
-angular.module('json-schema', [])
-        .directive('jsonSchema', jsonSchemaDirective)
+angular.module('json-schema-builder', [])
+        .directive('jsonSchemaBuilder', jsonSchemaBuilderDirective)
         .directive('modelTypeSelector', modelTypeSelectorDirective);
 
-jsonSchemaDirective.$inject = [];
-function jsonSchemaDirective() {
+jsonSchemaBuilderDirective.$inject = [];
+function jsonSchemaBuilderDirective() {
     return{
         restrict: 'A',
         scope: {
             $data: '=data'},
-        templateUrl: 'json-schema/templates/jsonSchema.html',
+        templateUrl: 'json-schema-builder/templates/jsonSchema.html',  
         link: function ($scope, ele, attr, model) {
 
             var MODELS = {};
@@ -430,7 +430,7 @@ modelTypeSelectorDirective.$inject = ['$rootScope'];
 function modelTypeSelectorDirective($rootScope) {
     return{
         restrict: 'A',
-        templateUrl: 'json-schema/templates/modelTypeSelector.html',
+        templateUrl: 'json-schema-builder/templates/modelTypeSelector.html',
         link: function (scope, ele, attr, model) {
 
         }

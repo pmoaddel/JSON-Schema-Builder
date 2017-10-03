@@ -3,6 +3,6 @@ module.exports = ( grunt, options ) ->
     sourceMap: true
     extDot: 'last'
 
-  fixtable:
+  main:
     files:
       'dist/fixtable-angular.js': ['coffee/**/*.coffee']

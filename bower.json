@@ -1,6 +1,6 @@
 {
-  "name": "json-schema-builder",
-  "description": "A simple GUI tool to enable designing and building JSON schemas",
+  "name": "angular-json-schema-builder",
+  "description": "A simple GUI tool to enable designing and building JSON schemas in Angularjs",
   "main": [
     "dist/jsonSchema.js",
     "dist/jsonSchema.css"

@@ -1,5 +1,5 @@
 module.exports = ( grunt, options ) ->
-  fixtable:
+  main:
     options:
       map: true
     src: 'dist/jsonSchema.css'

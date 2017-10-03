@@ -1,5 +1,4 @@
 module.exports = (grunt, options) ->
-
   dist:
     files:[
       {

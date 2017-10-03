@@ -1,4 +1,4 @@
 module.exports = ( grunt, options ) ->
-  fixtable:
+  main:
     files:
-      'dist/jsonSchema.min.js': ['dist/**/*.js']
+      'dist/jsonSchema.all.min.js': ['dist/jsonSchema.all.js']

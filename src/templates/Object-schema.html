@@ -2,7 +2,8 @@
   <div class="js-row" ng-class="showDetailsPan?'t_bg':''" ng-init="showDetailsPan=false;objDetSxpanded=true">
       <button class="btn btn-link btn-href glyphicon glyphicon-plus obj-add" ng-click="addNewProp(entity,$data)"></button>
       <span class="glyphicon t_color obj-exp" ng-class="objDetSxpanded?'glyphicon-triangle-bottom':'glyphicon-triangle-right'" ng-click="objDetSxpanded=!objDetSxpanded"></span>
-      <span ng-hide="entity.$root$"><input class="model-key" type="text" ng-model="entity._key" />:</span> <span model-type-selector></span>
+      <span ng-hide="entity.$root$"><input class="model-key" type="text" ng-model="entity._key" />:</span> 
+      <span model-type-selector></span>
       <span style="color:#9E9E9E;font-size:12px;">{<span>{{entity._properties.length}}</span>}</span>
       <div class="model-detail" ng-hide="showDetailsPan" ng-click="showDetailsPan=true"><span class="glyphicon glyphicon-pencil"></span></div>
       <div class="model-done" ng-show="showDetailsPan" ng-click="showDetailsPan=false"><span class="glyphicon glyphicon-ok"></span></div>
@@ -66,7 +67,7 @@
   <div style="border-left:0px solid rgba(0,0,0,0.2)" ng-show="objDetSxpanded">
       <div ng-repeat="prop in entity._properties">
           <div ng-repeat="(key, entity) in prop">
-              <div ng-include="''+entity._type+'-schema.html'"></div>
+              <div ng-include="'json-schema-builder/templates/'+entity._type+'-schema.html'"></div>
           </div>
       </div>
   </div>
