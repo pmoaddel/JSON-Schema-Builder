@@ -1,4 +1,4 @@
-<div style="margin-left:20px;position:relative;">
+<div>
   <div class="js-row" ng-class="showDetailsPan?'t_bg':''" ng-init="showDetailsPan=false;objDetSxpanded=true">
       <button class="btn btn-link btn-href glyphicon glyphicon-plus obj-add" ng-click="addNewProp(entity,$data)"></button>
       <span class="glyphicon t_color obj-exp" ng-class="objDetSxpanded?'glyphicon-triangle-bottom':'glyphicon-triangle-right'" ng-click="objDetSxpanded=!objDetSxpanded"></span>
@@ -6,7 +6,7 @@
       <span model-type-selector></span>
       <span style="color:#9E9E9E;font-size:12px;">{<span>{{entity._properties.length}}</span>}</span>
       <div class="model-detail" ng-hide="showDetailsPan" ng-click="showDetailsPan=true"><span class="glyphicon glyphicon-pencil"></span></div>
-      <div class="model-done" ng-show="showDetailsPan" ng-click="showDetailsPan=false"><span class="glyphicon glyphicon-ok"></span></div>
+      <div class="model-done" ng-show="showDetailsPan" ng-click="showDetailsPan=false"><span ._keyclass="glyphicon glyphicon-ok"></span></div>
       <div class="model-remove" ng-if="!entity.$root$"  ng-click="removeEntity(entity)"><span class="glyphicon glyphicon-remove"></span></div>
       <div class="model-summary">
           <span ng-show="entity._description" class="icon bj-playlist_add_check ico" uib-tooltip="Description present"></span>
@@ -33,7 +33,7 @@
               <div class="form-group">
                   <label class="control-label col-xs-2">Default:</label>
                   <div class="col-xs-9">
-                      <input type="text" class="form-control sm detail-ip" ng-model="entity._default" />
+                      <input type="text" class="form-control sm detail-ip" ng-model="entity.default" />
                   </div>
               </div>
           </form>
@@ -64,11 +64,9 @@
               
       </div>
   </div>
-  <div style="border-left:0px solid rgba(0,0,0,0.2)" ng-show="objDetSxpanded">
-      <div ng-repeat="prop in entity._properties">
-          <div ng-repeat="(key, entity) in prop">
-              <div ng-include="'json-schema-builder/templates/'+entity._type+'-schema.html'"></div>
-          </div>
+  <div class="indent" ng-show="objDetSxpanded">
+      <div ng-repeat="entity in entity._properties">
+        <div ng-include="'json-schema-builder/templates/'+entity.type+'-schema.html'"></div>
       </div>
   </div>
 </div>

@@ -6,20 +6,23 @@ module.exports =
 
   dev: [
   	'clean'
-    'copy:dist'    
+    'stylus'
+    'copy:build'    
   	'distJS'
     'watch'
   ]
 
   dist: [
   	'clean'
+    'stylus'
     'copy:dist'
   	'distJS'
   ]
 
   buildJS: [
-  	# 'coffee'
+  	'coffee'
     'ngtemplates'
+    'bower_concat'
     'concat'
   ]
 

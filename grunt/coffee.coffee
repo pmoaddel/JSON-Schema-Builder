@@ -1,8 +1,8 @@
 module.exports = ( grunt, options ) ->
   options:
-    sourceMap: true
+    sourceMap: false
     extDot: 'last'
 
   main:
     files:
-      'dist/fixtable-angular.js': ['coffee/**/*.coffee']
+      'build/jsonSchema.js': ['src/**/*.coffee']

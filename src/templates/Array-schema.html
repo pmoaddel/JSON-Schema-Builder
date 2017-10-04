@@ -1,8 +1,8 @@
-<div style="margin-left:20px;">
-  <div class="js-row" ng-class="showDetailsPan?'t_bg':''" ng-init="showDetailsPan=false">
+<div>
+  <div class="js-row" ng-class="showDetailsPan?'t_bg':''" ng-init="showDetailsPan=false;objDetSxpanded=true">
       <span ng-hide="entity.$root$"><input class="model-key" type="text" ng-model="entity._key" />:</span>
       <span model-type-selector></span>
-      <span ng-class="entity._items[0]._type" class="unspecified">[ {{entity._items[0]._type?entity._items[0]._type:'Unspecified'}} ]</span>
+      <span ng-class="entity.items[0].type" class="unspecified">[ {{entity.items.type ? entity.items.type : 'Unspecified'}} ]</span>
       <div class="model-detail" ng-hide="showDetailsPan" ng-click="showDetailsPan=true"><span class="glyphicon glyphicon-pencil"></span></div>
       <div class="model-done" ng-show="showDetailsPan" ng-click="showDetailsPan=false"><span class="glyphicon glyphicon-ok"></span></div>
       <div class="model-remove" ng-if="!entity.$root$"  ng-click="removeEntity(entity)"><span class="glyphicon glyphicon-remove"></span></div>
@@ -27,12 +27,12 @@
                       <textarea class="form-control" ng-model="entity._description"></textarea>
                   </div>
               </div>
-              <!-- <div class="form-group">
+              <div class="form-group">
                   <label class="control-label col-xs-2">Default:</label>
                   <div class="col-xs-9">
-                      <input type="text" class="form-control sm detail-ip" ng-model="entity._default" />
+                      <input type="text" class="form-control sm detail-ip" ng-model="entity.default" />
                   </div>
-              </div> -->
+              </div>
           </form>
           </div>
       </div>
@@ -58,6 +58,11 @@
               <input type="number" class="form-control sm detail-ip" ng-model="entity._maxItems" min="0" placeholder=">=0" />
           </div>
       </form>
+      </div>
+  </div>
+  <div class="indent" style="border-left:0px solid rgba(0,0,0,0.2)" ng-show="objDetSxpanded" ng-if="entity.items.type === 'object' || entity.items.length > 1">
+      <div ng-repeat="entity in [entity.items]" class="indent">
+          <div ng-include="'json-schema-builder/templates/'+entity.type+'-schema.html'"></div>
       </div>
   </div>
 </div>

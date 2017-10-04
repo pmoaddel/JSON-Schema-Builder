@@ -1,14 +1,14 @@
 module.exports = (grunt, options) ->
-  dist:
+  build:
     files:[
       {
         expand: true
         flatten: true
         cwd: 'src'
         src: [
-          'css/*.*'
-          'js/*.*'
+          'css/**/*.css'
+          'js/**/*.js'
         ]
-        dest: 'dist'
+        dest: 'build'
       }
     ]

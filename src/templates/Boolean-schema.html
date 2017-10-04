@@ -1,4 +1,4 @@
-<div style="margin-left:20px;">
+<div>
   <div class="js-row" ng-class="showDetailsPan?'t_bg':''" ng-init="showDetailsPan=false">
       <span ng-hide="entity.$root$"><input class="model-key" type="text" ng-model="entity._key" />:</span>
       <span model-type-selector></span>
@@ -10,7 +10,7 @@
       </div>
   </div>
   <div class="model-det-cont" ng-show="showDetailsPan">
-      <form class="form-horizontal form-compact model-detail-form" name="detailForm" role="form">
+    <form class="form-horizontal form-compact model-detail-form" name="detailForm" role="form">
       <div class="col-xs-6" style="border-right:1px solid #9E9E9E">
           <div class="t_color bold">Basic Info</div>
           <div class="">
@@ -29,7 +29,7 @@
               <div class="form-group">
                   <label class="control-label col-xs-2">Default:</label>
                   <div class="col-xs-9">
-                      <select class="form-control sm detail-ip" ng-model="entity._default">
+                      <select class="form-control sm detail-ip" ng-model="entity.default">
                           <option value="false">False</option>
                           <option value="true">True</option>
                       </select>

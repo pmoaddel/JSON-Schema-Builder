@@ -2,7 +2,7 @@ module.exports = (grunt) ->
 	jsonschema: {
     cwd: 'src/templates'
 		src: '**.html'
-		dest: 'dist/templates.js'
+		dest: 'build/templates.js'
 		options:
 			module: 'json-schema-builder'
 			# htmlmin:

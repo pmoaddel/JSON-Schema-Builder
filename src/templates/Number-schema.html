@@ -1,4 +1,4 @@
-<div style="margin-left:20px;">
+<div>
   <div class="js-row" ng-class="showDetailsPan?'t_bg':''" ng-init="showDetailsPan=false">
       <span ng-hide="entity.$root$"><input class="model-key" type="text" ng-model="entity._key" />:</span>
       <span model-type-selector></span>
@@ -29,14 +29,14 @@
               <div class="form-group">
                   <label class="control-label col-xs-2">Default:</label>
                   <div class="col-xs-9">
-                      <input type="number" class="form-control sm detail-ip" ng-model="entity._default" />
+                      <input type="number" class="form-control sm detail-ip" ng-model="entity.default" />
                   </div>
               </div>
           </form>
           </div>
       </div>
       <div class="col-xs-6">
-          <form class="form-inline model-detail-form" name="detailForm" role="form">
+        <form class="form-inline model-detail-form" name="detailForm" role="form">
           <div class="t_color bold">Validations</div>
           <div ng-if="!entity.$root$">
               <div class="checkbox" style="padding: 2px 0;">
@@ -64,7 +64,7 @@
                   <option value="double">double</option>
               </select>
           </div>
-      </form>
+        </form>
       </div>
   </div>
 </div>

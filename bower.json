@@ -2,8 +2,8 @@
   "name": "angular-json-schema-builder",
   "description": "A simple GUI tool to enable designing and building JSON schemas in Angularjs",
   "main": [
-    "dist/jsonSchema.js",
-    "dist/jsonSchema.css"
+    "dist/jsonSchema.all.js",
+    "dist/jsonSchema.all.css"
   ],
   "authors": [
     {
@@ -32,5 +32,9 @@
     "src",
     "docs",
     "grunt"
-  ]
+  ],
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "angular-underscore-module": "^1.0.3"
+  }
 }

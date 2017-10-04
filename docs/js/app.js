@@ -33,8 +33,11 @@ function schemaCtrler($scope) {
           "description": "The Account Number"
         },
         "Phone": {
-          "type": "string",
-          "description": "The Phone Number associated with the Account"
+          "type": "array",
+          "description": "The Phone Numbers associated with the Account",
+          "items":{
+            "type": "string"
+          }
         },
         "BillingStreet": {
           "type": "string",
@@ -75,8 +78,48 @@ function schemaCtrler($scope) {
         "ShippingCountry": {
           "type": "string",
           "description": "The shipping country"
+        },
+        "SomeThing": {
+          "type": "object",
+          "title": "Some Thing",
+          "description": "A single thing.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the thing",
+              "default": "Waa waa wee woo"
+            },
+            "color": {
+              "type": "string",
+              "description": "Color of the thing",
+              "default": "blue"
+            }
+          }
         }
       }
     }
   }
+
+
+  // $scope.data = 
+  //   {
+  //     "$schema": "http://json-schema.org/draft-04/schema#",
+  //     "title": "AccountNumberRequest",
+  //     "description": "An account number based request",
+  //     "type": "object",
+  //     "required": [
+  //       "ACCOUNT_NUMBER",
+  //       "ACCOUNT_NUMBER2"
+  //     ],
+  //     "properties": {
+  //       "ACCOUNT_NUMBER": {
+  //         "type": "string",
+  //         "description": "The account number used to query the CRM"
+  //       },
+  //       "ACCOUNT_NUMBER2": {
+  //         "type": "string",
+  //         "description": "The account number used to query the CRM"
+  //       }
+  //     }
+  //   }
 }
