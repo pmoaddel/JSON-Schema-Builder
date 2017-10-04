@@ -5,6 +5,9 @@
       <div class="model-detail" ng-hide="showDetailsPan" ng-click="showDetailsPan=true"><span class="glyphicon glyphicon-pencil"></span></div>
       <div class="model-done" ng-show="showDetailsPan" ng-click="showDetailsPan=false"><span class="glyphicon glyphicon-ok"></span></div>
       <div class="model-remove" ng-if="!entity.$root$"  ng-click="removeEntity(entity)"><span class="glyphicon glyphicon-remove"></span></div>
+      <div class="model-summary">
+        <span ng-show="entity.description" class="comment glyphicon glyphicon-comment" uib-tooltip="{{entity.description}}"></span>
+      </div>
   </div>
   <div class="model-det-cont" ng-show="showDetailsPan">
       <div class="col-xs-6" style="border-right:1px solid #9E9E9E">
@@ -20,7 +23,7 @@
               <div class="form-group">
                   <label class="control-label col-xs-2">Description:</label>
                   <div class="col-xs-9">
-                      <textarea class="form-control" ng-model="entity._description"></textarea>
+                      <textarea class="form-control" ng-model="entity.description"></textarea>
                   </div>
               </div>
           </form>

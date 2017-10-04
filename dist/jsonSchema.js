@@ -1631,7 +1631,8 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "      <div class=\"model-done\" ng-show=\"showDetailsPan\" ng-click=\"showDetailsPan=false\"><span class=\"glyphicon glyphicon-ok\"></span></div>\n" +
     "      <div class=\"model-remove\" ng-if=\"!entity.$root$\"  ng-click=\"removeEntity(entity)\"><span class=\"glyphicon glyphicon-remove\"></span></div>\n" +
     "      <div class=\"model-summary\">\n" +
-    "          <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity._required\"/>Required</span>\n" +
+    "        <span ng-show=\"entity.description\" class=\"comment glyphicon glyphicon-comment\" uib-tooltip=\"{{entity.description}}\"></span>\n" +
+    "        <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity.required\"/>Required</span>\n" +
     "      </div>\n" +
     "  </div>\n" +
     "  <div class=\"model-det-cont\" ng-show=\"showDetailsPan\">\n" +
@@ -1648,7 +1649,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "              <div class=\"form-group\">\n" +
     "                  <label class=\"control-label col-xs-2\">Description:</label>\n" +
     "                  <div class=\"col-xs-9\">\n" +
-    "                      <textarea class=\"form-control\" ng-model=\"entity._description\"></textarea>\n" +
+    "                      <textarea class=\"form-control\" ng-model=\"entity.description\"></textarea>\n" +
     "                  </div>\n" +
     "              </div>\n" +
     "              <div class=\"form-group\">\n" +
@@ -1665,7 +1666,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "          <div class=\"t_color bold\">Validations</div>\n" +
     "          <div ng-if=\"!entity.$root$\">\n" +
     "              <div class=\"checkbox\" style=\"padding: 2px 0;\">\n" +
-    "                  <label><input type=\"checkbox\" ng-model=\"entity._required\" /> Required ?</label>\n" +
+    "                  <label><input type=\"checkbox\" ng-model=\"entity.required\" /> Required ?</label>\n" +
     "              </div>\n" +
     "          </div>\n" +
     "          <div>\n" +
@@ -1702,7 +1703,8 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "      <div class=\"model-done\" ng-show=\"showDetailsPan\" ng-click=\"showDetailsPan=false\"><span class=\"glyphicon glyphicon-ok\"></span></div>\n" +
     "      <div class=\"model-remove\" ng-if=\"!entity.$root$\"  ng-click=\"removeEntity(entity)\"><span class=\"glyphicon glyphicon-remove\"></span></div>\n" +
     "      <div class=\"model-summary\">\n" +
-    "          <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity._required\"/>Required</span>\n" +
+    "        <span ng-show=\"entity.description\" class=\"comment glyphicon glyphicon-comment\" uib-tooltip=\"{{entity.description}}\"></span>\n" +
+    "        <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity.required\"/>Required</span>\n" +
     "      </div>\n" +
     "  </div>\n" +
     "  <div class=\"model-det-cont\" ng-show=\"showDetailsPan\">\n" +
@@ -1719,7 +1721,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "              <div class=\"form-group\">\n" +
     "                  <label class=\"control-label col-xs-2\">Description:</label>\n" +
     "                  <div class=\"col-xs-9\">\n" +
-    "                      <textarea class=\"form-control\" ng-model=\"entity._description\"></textarea>\n" +
+    "                      <textarea class=\"form-control\" ng-model=\"entity.description\"></textarea>\n" +
     "                  </div>\n" +
     "              </div>\n" +
     "              <div class=\"form-group\">\n" +
@@ -1737,7 +1739,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "          <div class=\"t_color bold\">Validations</div>\n" +
     "          <div ng-if=\"!entity.$root$\">\n" +
     "              <div class=\"checkbox\" style=\"padding: 2px 0;\">\n" +
-    "                  <label><input type=\"checkbox\" ng-model=\"entity._required\" /> Required ?</label>\n" +
+    "                  <label><input type=\"checkbox\" ng-model=\"entity.required\" /> Required ?</label>\n" +
     "              </div>\n" +
     "          </div>\n" +
     "      </div>\n" +
@@ -1756,7 +1758,8 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "      <div class=\"model-done\" ng-show=\"showDetailsPan\" ng-click=\"showDetailsPan=false\"><span class=\"glyphicon glyphicon-ok\"></span></div>\n" +
     "      <div class=\"model-remove\" ng-if=\"!entity.$root$\"  ng-click=\"removeEntity(entity)\"><span class=\"glyphicon glyphicon-remove\"></span></div>\n" +
     "      <div class=\"model-summary\">\n" +
-    "          <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity._required\"/>Required</span>\n" +
+    "        <span ng-show=\"entity.description\" class=\"comment glyphicon glyphicon-comment\" uib-tooltip=\"{{entity.description}}\"></span>\n" +
+    "        <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity.required\"/>Required</span>\n" +
     "      </div>\n" +
     "  </div>\n" +
     "  <div class=\"model-det-cont\" ng-show=\"showDetailsPan\">\n" +
@@ -1773,7 +1776,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "              <div class=\"form-group\">\n" +
     "                  <label class=\"control-label col-xs-2\">Description:</label>\n" +
     "                  <div class=\"col-xs-9\">\n" +
-    "                      <textarea class=\"form-control\" ng-model=\"entity._description\"></textarea>\n" +
+    "                      <textarea class=\"form-control\" ng-model=\"entity.description\"></textarea>\n" +
     "                  </div>\n" +
     "              </div>\n" +
     "              <div class=\"form-group\">\n" +
@@ -1790,7 +1793,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "          <div class=\"t_color bold\">Validations</div>\n" +
     "          <div ng-if=\"!entity.$root$\">\n" +
     "              <div class=\"checkbox\" style=\"padding: 2px 0;\">\n" +
-    "                  <label><input type=\"checkbox\" ng-model=\"entity._required\" /> Required ?</label>\n" +
+    "                  <label><input type=\"checkbox\" ng-model=\"entity.required\" /> Required ?</label>\n" +
     "              </div>\n" +
     "          </div>\n" +
     "          <div class=\"form-group col-xs-12\">\n" +
@@ -1896,6 +1899,9 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "      <div class=\"model-detail\" ng-hide=\"showDetailsPan\" ng-click=\"showDetailsPan=true\"><span class=\"glyphicon glyphicon-pencil\"></span></div>\n" +
     "      <div class=\"model-done\" ng-show=\"showDetailsPan\" ng-click=\"showDetailsPan=false\"><span class=\"glyphicon glyphicon-ok\"></span></div>\n" +
     "      <div class=\"model-remove\" ng-if=\"!entity.$root$\"  ng-click=\"removeEntity(entity)\"><span class=\"glyphicon glyphicon-remove\"></span></div>\n" +
+    "      <div class=\"model-summary\">\n" +
+    "        <span ng-show=\"entity.description\" class=\"comment glyphicon glyphicon-comment\" uib-tooltip=\"{{entity.description}}\"></span>\n" +
+    "      </div>\n" +
     "  </div>\n" +
     "  <div class=\"model-det-cont\" ng-show=\"showDetailsPan\">\n" +
     "      <div class=\"col-xs-6\" style=\"border-right:1px solid #9E9E9E\">\n" +
@@ -1911,7 +1917,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "              <div class=\"form-group\">\n" +
     "                  <label class=\"control-label col-xs-2\">Description:</label>\n" +
     "                  <div class=\"col-xs-9\">\n" +
-    "                      <textarea class=\"form-control\" ng-model=\"entity._description\"></textarea>\n" +
+    "                      <textarea class=\"form-control\" ng-model=\"entity.description\"></textarea>\n" +
     "                  </div>\n" +
     "              </div>\n" +
     "          </form>\n" +
@@ -1933,7 +1939,8 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "      <div class=\"model-done\" ng-show=\"showDetailsPan\" ng-click=\"showDetailsPan=false\"><span class=\"glyphicon glyphicon-ok\"></span></div>\n" +
     "      <div class=\"model-remove\" ng-if=\"!entity.$root$\"  ng-click=\"removeEntity(entity)\"><span class=\"glyphicon glyphicon-remove\"></span></div>\n" +
     "      <div class=\"model-summary\">\n" +
-    "          <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity._required\"/>Required</span>\n" +
+    "        <span ng-show=\"entity.description\" class=\"comment glyphicon glyphicon-comment\" uib-tooltip=\"{{entity.description}}\"></span>\n" +
+    "        <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity.required\"/>Required</span>\n" +
     "      </div>\n" +
     "  </div>\n" +
     "  <div class=\"model-det-cont\" ng-show=\"showDetailsPan\">\n" +
@@ -1950,7 +1957,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "              <div class=\"form-group\">\n" +
     "                  <label class=\"control-label col-xs-2\">Description:</label>\n" +
     "                  <div class=\"col-xs-9\">\n" +
-    "                      <textarea class=\"form-control\" ng-model=\"entity._description\"></textarea>\n" +
+    "                      <textarea class=\"form-control\" ng-model=\"entity.description\"></textarea>\n" +
     "                  </div>\n" +
     "              </div>\n" +
     "              <div class=\"form-group\">\n" +
@@ -1967,7 +1974,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "          <div class=\"t_color bold\">Validations</div>\n" +
     "          <div ng-if=\"!entity.$root$\">\n" +
     "              <div class=\"checkbox\" style=\"padding: 2px 0;\">\n" +
-    "                  <label><input type=\"checkbox\" ng-model=\"entity._required\" /> Required ?</label>\n" +
+    "                  <label><input type=\"checkbox\" ng-model=\"entity.required\" /> Required ?</label>\n" +
     "              </div>\n" +
     "          </div>\n" +
     "          <div class=\"form-group col-xs-12\">\n" +
@@ -1999,19 +2006,18 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
 
 
   $templateCache.put('json-schema-builder/templates/object-schema.html',
-    "<div>\n" +
     "  <div class=\"js-row\" ng-class=\"showDetailsPan?'t_bg':''\" ng-init=\"showDetailsPan=false;objDetSxpanded=true\">\n" +
     "      <button class=\"btn btn-link btn-href glyphicon glyphicon-plus obj-add\" ng-click=\"addNewProp(entity,$data)\"></button>\n" +
     "      <span class=\"glyphicon t_color obj-exp\" ng-class=\"objDetSxpanded?'glyphicon-triangle-bottom':'glyphicon-triangle-right'\" ng-click=\"objDetSxpanded=!objDetSxpanded\"></span>\n" +
     "      <span ng-hide=\"entity.$root$\"><input class=\"model-key\" type=\"text\" ng-model=\"entity._key\" />:</span> \n" +
     "      <span model-type-selector></span>\n" +
-    "      <span style=\"color:#9E9E9E;font-size:12px;\">{<span>{{entity._properties.length}}</span>}</span>\n" +
+    "      <span class=\"object-prop-count\">{<span>{{entity._properties.length}}</span>}</span>\n" +
     "      <div class=\"model-detail\" ng-hide=\"showDetailsPan\" ng-click=\"showDetailsPan=true\"><span class=\"glyphicon glyphicon-pencil\"></span></div>\n" +
-    "      <div class=\"model-done\" ng-show=\"showDetailsPan\" ng-click=\"showDetailsPan=false\"><span ._keyclass=\"glyphicon glyphicon-ok\"></span></div>\n" +
+    "      <div class=\"model-done\" ng-show=\"showDetailsPan\" ng-click=\"showDetailsPan=false\"><span class=\"glyphicon glyphicon-ok\"></span></div>\n" +
     "      <div class=\"model-remove\" ng-if=\"!entity.$root$\"  ng-click=\"removeEntity(entity)\"><span class=\"glyphicon glyphicon-remove\"></span></div>\n" +
     "      <div class=\"model-summary\">\n" +
-    "          <span ng-show=\"entity._description\" class=\"icon bj-playlist_add_check ico\" uib-tooltip=\"Description present\"></span>\n" +
-    "          <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity._required\"/>Required</span>\n" +
+    "          <span ng-show=\"entity.description\" class=\"comment glyphicon glyphicon-comment\" uib-tooltip=\"{{entity.description}}\"></span>\n" +
+    "          <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity.required\"/>Required</span>\n" +
     "      </div>\n" +
     "  </div>\n" +
     "  <div class=\"model-det-cont\" ng-show=\"showDetailsPan\">\n" +
@@ -2028,7 +2034,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "              <div class=\"form-group\">\n" +
     "                  <label class=\"control-label col-xs-2\">Description:</label>\n" +
     "                  <div class=\"col-xs-9\">\n" +
-    "                      <textarea class=\"form-control\" ng-model=\"entity._description\"></textarea>\n" +
+    "                      <textarea class=\"form-control\" ng-model=\"entity.description\"></textarea>\n" +
     "                  </div>\n" +
     "              </div>\n" +
     "              <div class=\"form-group\">\n" +
@@ -2045,12 +2051,12 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "          <div class=\"t_color bold\">Validations</div>\n" +
     "          <div ng-if=\"!entity.$root$\">\n" +
     "              <div class=\"checkbox\" style=\"padding: 2px 0;\">\n" +
-    "                  <label><input type=\"checkbox\" ng-model=\"entity._required\"> Required ?</label>\n" +
+    "                  <label><input type=\"checkbox\" ng-model=\"entity.required\"> Required ?</label>\n" +
     "              </div>\n" +
     "          </div>\n" +
     "          <div>\n" +
     "              <div class=\"checkbox\" style=\"padding: 2px 0;\">\n" +
-    "                  <label><input type=\"checkbox\" ng-model=\"entity._disallowAdditional\"> Disallow Additipnal Properties</label>\n" +
+    "                  <label><input type=\"checkbox\" ng-model=\"entity._disallowAdditional\"> Disallow Additional Properties</label>\n" +
     "              </div>\n" +
     "          </div>\n" +
     "          <div class=\"form-group col-xs-12\">\n" +
@@ -2069,8 +2075,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "      <div ng-repeat=\"entity in entity._properties\">\n" +
     "        <div ng-include=\"'json-schema-builder/templates/'+entity.type+'-schema.html'\"></div>\n" +
     "      </div>\n" +
-    "  </div>\n" +
-    "</div>"
+    "  </div>"
   );
 
 
@@ -2083,7 +2088,8 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "      <div class=\"model-done\" ng-show=\"showDetailsPan\" ng-click=\"showDetailsPan=false\"><span class=\"glyphicon glyphicon-ok\"></span></div>\n" +
     "      <div class=\"model-remove\" ng-if=\"!entity.$root$\"  ng-click=\"removeEntity(entity)\"><span class=\"glyphicon glyphicon-remove\"></span></div>\n" +
     "      <div class=\"model-summary\">\n" +
-    "          <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity._required\"/>Required</span>\n" +
+    "        <span ng-show=\"entity.description\" class=\"comment glyphicon glyphicon-comment\" uib-tooltip=\"{{entity.description}}\"></span>\n" +
+    "        <span ng-if=\"!entity.$root$\"><input type=\"checkbox\" class=\"small\" ng-model=\"entity.required\"/>Required</span>\n" +
     "      </div>\n" +
     "  </div>\n" +
     "  <div class=\"model-det-cont\" ng-show=\"showDetailsPan\">\n" +
@@ -2100,7 +2106,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "              <div class=\"form-group\">\n" +
     "                  <label class=\"control-label col-xs-2\">Description:</label>\n" +
     "                  <div class=\"col-xs-9\">\n" +
-    "                      <textarea class=\"form-control\" ng-model=\"entity._description\"></textarea>\n" +
+    "                      <textarea class=\"form-control\" ng-model=\"entity.description\"></textarea>\n" +
     "                  </div>\n" +
     "              </div>\n" +
     "              <div class=\"form-group\">\n" +
@@ -2117,7 +2123,7 @@ angular.module('json-schema-builder').run(['$templateCache', function($templateC
     "          <div class=\"t_color bold\">Validations</div>\n" +
     "          <div ng-if=\"!entity.$root$\">\n" +
     "              <div class=\"checkbox\" style=\"padding: 2px 0;\">\n" +
-    "                  <label><input type=\"checkbox\" ng-model=\"entity._required\" /> Required ?</label>\n" +
+    "                  <label><input type=\"checkbox\" ng-model=\"entity.required\" /> Required ?</label>\n" +
     "              </div>\n" +
     "          </div>\n" +
     "          <div class=\"form-group col-xs-12\">\n" +

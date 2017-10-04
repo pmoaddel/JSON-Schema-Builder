@@ -19,14 +19,31 @@ function schemaCtrler($scope) {
       "required": [
         "Id"
       ],
+      "Id": {
+        "type": "string",
+        "description": "ID of the Account"
+      },
+      "Name": {
+        "type": "string",
+        "description": "Name of the Account"
+      },
       "properties": {
-        "Id": {
-          "type": "string",
-          "description": "ID of the Account"
-        },
-        "Name": {
-          "type": "string",
-          "description": "Name of the Account"
+        "SomeThing": {
+          "type": "object",
+          "title": "Some Thing",
+          "description": "A single thing.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the thing",
+              "default": "Waa waa wee woo"
+            },
+            "color": {
+              "type": "string",
+              "description": "Color of the thing",
+              "default": "blue"
+            }
+          }
         },
         "AccountNumber": {
           "type": "string",
@@ -34,7 +51,6 @@ function schemaCtrler($scope) {
         },
         "Phone": {
           "type": "array",
-          "description": "The Phone Numbers associated with the Account",
           "items":{
             "type": "string"
           }
@@ -78,23 +94,6 @@ function schemaCtrler($scope) {
         "ShippingCountry": {
           "type": "string",
           "description": "The shipping country"
-        },
-        "SomeThing": {
-          "type": "object",
-          "title": "Some Thing",
-          "description": "A single thing.",
-          "properties": {
-            "name": {
-              "type": "string",
-              "description": "Name of the thing",
-              "default": "Waa waa wee woo"
-            },
-            "color": {
-              "type": "string",
-              "description": "Color of the thing",
-              "default": "blue"
-            }
-          }
         }
       }
     }

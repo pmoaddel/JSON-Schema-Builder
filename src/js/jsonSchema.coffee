@@ -130,8 +130,8 @@ angular.module('json-schema-builder', [])
         #   switch entity._type
         #       when 'Object'
         #       schema.type = 'object'
-        #       if entity._description
-        #           schema.description = entity._description
+        #       if entity.description
+        #           schema.description = entity.description
         #       if entity._minProperties >= 0
         #           schema.minProperties = entity._minProperties
         #       if entity._maxProperties >= 0
@@ -148,7 +148,7 @@ angular.module('json-schema-builder', [])
         #               if val and val._type
         #               res = obj2JsonString(val)
         #               schema.properties[val._key] = res
-        #               if val._required
+        #               if val.required
         #                   schema.required.push val._key
         #               return
         #           i++
@@ -157,8 +157,8 @@ angular.module('json-schema-builder', [])
         #       console.log entity
         #       when 'String'
         #       schema.type = 'string'
-        #       if entity._description
-        #           schema.description = entity._description
+        #       if entity.description
+        #           schema.description = entity.description
         #       if entity._minLength >= 0
         #           schema.minLength = entity._minLength
         #       if entity._maxLength >= 0
@@ -171,8 +171,8 @@ angular.module('json-schema-builder', [])
         #           schema.default = entity.default
         #       when 'Array'
         #       schema.type = 'array'
-        #       if entity._description
-        #           schema.description = entity._description
+        #       if entity.description
+        #           schema.description = entity.description
         #       if entity.default
         #           schema.default = entity.default
         #       if entity._uniqueItems
@@ -185,8 +185,8 @@ angular.module('json-schema-builder', [])
         #           schema.items = obj2JsonString(entity._items[0])
         #       when 'Integer', 'Number'
         #       schema.type = if entity._type == 'Integer' then 'integer' else 'number'
-        #       if entity._description
-        #           schema.description = entity._description
+        #       if entity.description
+        #           schema.description = entity.description
         #       if entity.default
         #           schema.default = entity.default
         #       if entity._minimum >= 0
@@ -203,14 +203,14 @@ angular.module('json-schema-builder', [])
         #           schema.format = entity._format
         #       when 'Boolean'
         #       schema.type = 'boolean'
-        #       if entity._description
-        #           schema.description = entity._description
+        #       if entity.description
+        #           schema.description = entity.description
         #       if entity.default
         #           schema.default = entity.default
         #       when 'Null'
         #       schema.type = 'null'
-        #       if entity._description
-        #           schema.description = entity._description
+        #       if entity.description
+        #           schema.description = entity.description
         #       if entity.default
         #           schema.default = entity.default
         #   return schema
