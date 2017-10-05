@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -50,6 +51,5 @@
     "grunt-contrib-watch": "^0.6.1",
     "load-grunt-config": "^0.16.0",
     "time-grunt": "^1.1.0"
-  },
-  "postinstall": "bower install"
+  }
 }
