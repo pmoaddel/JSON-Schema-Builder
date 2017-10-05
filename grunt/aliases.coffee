@@ -1,32 +1,24 @@
 module.exports =
 
   default: [
-  	'dist'
+  	'dev'
   ]
 
   dev: [
-  	'clean'
-    'stylus'
-    'copy:build'    
-  	'distJS'
+    'dist'
     'watch'
   ]
 
   dist: [
   	'clean'
     'stylus'
-    'copy:dist'
   	'distJS'
   ]
 
-  buildJS: [
+  distJS: [
   	'coffee'
     'ngtemplates'
     'bower_concat'
     'concat'
-  ]
-
-  distJS: [
-  	'buildJS'
   	'uglify'
   ]

@@ -1,26 +1,26 @@
 <div class="model-type-selector-cont">
-  <div class="t_color model-edit-x" ng-click="$parent.showDetailsPan=true"><span class="glyphicon glyphicon-pencil gap"></span>Edit Model</div>
-  <div class="title t_color">Model Type</div>
+  <div class="t_color model-edit-x" ng-click="$parent.showDetailsPan=true"><span class="glyphicon glyphicon-pencil gap"></span>{{ t_prefix+'EDIT_MODEL' | translate }}</div>
+  <div class="title t_color">{{ t_prefix+'MODEL_TYPE' | translate }}</div>
   <div class="model-types">
-      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Array'?'t_bg':''" ng-click="changeModelType('Array', entity)">Array</button>
-      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Boolean'?'t_bg':''" ng-click="changeModelType('Boolean', entity)">Boolean</button>
-      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Integer'?'t_bg':''" ng-click="changeModelType('Integer', entity)">Integer</button>
-      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Number'?'t_bg':''" ng-click="changeModelType('Number', entity)">Number</button>
-      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Null'?'t_bg':''" ng-click="changeModelType('Null', entity)">null</button>
-      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Object'?'t_bg':''" ng-click="changeModelType('Object', entity)">Object</button>
-      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='String'?'t_bg':''" ng-click="changeModelType('String', entity)">String</button>
-      <button class="btn btn-link btn-sm" ng-click="changeModelType('$ref', entity)">$ref</button>
+      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Array'?'t_bg':''" ng-click="changeModelType('Array', entity)">{{ t_prefix+'ARRAY' | translate }}</button>
+      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Boolean'?'t_bg':''" ng-click="changeModelType('Boolean', entity)">{{ t_prefix+'BOOLEAN' | translate }}</button>
+      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Integer'?'t_bg':''" ng-click="changeModelType('Integer', entity)">{{ t_prefix+'INTEGER' | translate }}</button>
+      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Number'?'t_bg':''" ng-click="changeModelType('Number', entity)">{{ t_prefix+'NUMBER' | translate }}</button>
+      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Null'?'t_bg':''" ng-click="changeModelType('Null', entity)">{{ t_prefix+'NULL' | translate }}</button>
+      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='Object'?'t_bg':''" ng-click="changeModelType('Object', entity)">{{ t_prefix+'OBJECT' | translate }}</button>
+      <button class="btn btn-link btn-sm" ng-class="configs.currModelType=='String'?'t_bg':''" ng-click="changeModelType('String', entity)">{{ t_prefix+'STRING' | translate }}</button>
+      <button class="btn btn-link btn-sm" ng-click="changeModelType('$ref', entity)">{{ t_prefix+'DOLLAR_REF' | translate }}</button>
   </div>
   <div ng-if="configs.showArrItems">
-      <div class="title t_color">Array Items Type</div>
+      <div class="title t_color">{{ t_prefix+'ARRAY_ITEMS_TYPE' | translate }}</div>
       <div class="array-items">
-          <button class="btn btn-link btn-sm" ng-click="setArrayType('Unspecified', entity)">Unspecified</button>
+          <button class="btn btn-link btn-sm" ng-click="setArrayType('Unspecified', entity)">{{ t_prefix+'UNSPECIFIED' | translate }}</button>
           <!--<button class="btn btn-link btn-sm" ng-click="">Array</button>-->
-          <button class="btn btn-link btn-sm" ng-click="setArrayType('Integer', entity)">Integer</button>
-          <button class="btn btn-link btn-sm" ng-click="setArrayType('Boolean', entity)">Boolean</button>
-          <button class="btn btn-link btn-sm" ng-click="setArrayType('Number', entity)">Number</button>
-          <button class="btn btn-link btn-sm" ng-click="setArrayType('Object', entity)">Object</button>
-          <button class="btn btn-link btn-sm" ng-click="setArrayType('String', entity)">String</button>
+          <button class="btn btn-link btn-sm" ng-click="setArrayType('Integer', entity)">{{ t_prefix+'INTEGER' | translate }}</button>
+          <button class="btn btn-link btn-sm" ng-click="setArrayType('Boolean', entity)">{{ t_prefix+'BOOLEAN' | translate }}</button>
+          <button class="btn btn-link btn-sm" ng-click="setArrayType('Number', entity)">{{ t_prefix+'NUMBER' | translate }}</button>
+          <button class="btn btn-link btn-sm" ng-click="setArrayType('Object', entity)">{{ t_prefix+'OBJECT' | translate }}</button>
+          <button class="btn btn-link btn-sm" ng-click="setArrayType('String', entity)">{{ t_prefix+'STRING' | translate }}</button>
       </div>
   </div>
 </div>

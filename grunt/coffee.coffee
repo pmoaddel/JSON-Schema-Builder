@@ -1,8 +1,8 @@
 module.exports = ( grunt, options ) ->
   options:
-    sourceMap: false
+    sourceMap: true
     extDot: 'last'
 
   main:
     files:
-      'build/jsonSchema.js': ['src/**/*.coffee']
+      'build/jsonSchema-coffee.js': ['src/**/*.coffee']

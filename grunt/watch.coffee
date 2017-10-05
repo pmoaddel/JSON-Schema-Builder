@@ -5,14 +5,5 @@ module.exports = ( grunt, options ) ->
       'docs/**'
     ]
     tasks: [
-      'dev'
+      'dist'
     ]
-
-  # sass:
-  #   files: [
-  #     'scss/**/*.scss'
-  #   ]
-  #   tasks: [
-  #     'sass'
-  #     'autoprefixer'
-  #   ]

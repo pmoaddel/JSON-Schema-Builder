@@ -41,6 +41,9 @@
 .json-schema-builder .js-row.t_bg .model-summary {
   color: #fff;
 }
+.json-schema-builder .js-row.t_bg .object-prop-count {
+  color: #fff;
+}
 .json-schema-builder .js-row:hover {
   background: #eceff1;
 }

@@ -11,17 +11,17 @@
   </div>
   <div class="model-det-cont" ng-show="showDetailsPan">
       <div class="col-xs-6" style="border-right:1px solid #9E9E9E">
-          <div class="t_color bold">Basic Info</div>
+          <div class="t_color bold">{{ t_prefix+'BASIC_INFO' | translate }}</div>
           <div class="">
           <form class="form-horizontal form-compact model-detail-form" name="detailForm" role="form">
               <div class="form-group" ng-if="!entity.$root$">
-                  <label class="control-label col-xs-2">Name:</label>
+                  <label class="control-label col-xs-2">{{ t_prefix+'NAME' | translate }}:</label>
                   <div class="col-xs-9">
-                      <input type="text" class="form-control sm detail-ip" id="foldName" placeholder="Field Name" ng-model="entity._key">
+                      <input type="text" class="form-control sm detail-ip" id="foldName" placeholder="{{ t_prefix+'FIELD_NAME' | translate }}" ng-model="entity._key">
                   </div>
               </div>
               <div class="form-group">
-                  <label class="control-label col-xs-2">Description:</label>
+                  <label class="control-label col-xs-2">{{ t_prefix+'DESCRIPTION' | translate }}:</label>
                   <div class="col-xs-9">
                       <textarea class="form-control" ng-model="entity.description"></textarea>
                   </div>

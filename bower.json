@@ -35,6 +35,7 @@
   ],
   "dependencies": {
     "underscore": "^1.8.3",
-    "angular-underscore-module": "^1.0.3"
+    "angular-underscore-module": "^1.0.3",
+    "angular-translate": "^2.15.2"
   }
 }
