@@ -1,70 +1,76 @@
-<div>
-  <div class="js-row" ng-class="showDetailsPan?'t_bg':''" ng-init="showDetailsPan=false">
-      <span ng-hide="entity.$root$"><input class="model-key" type="text" ng-model="entity._key" />:</span>
-      <span model-type-selector></span>
-      <div class="model-detail" ng-hide="showDetailsPan" ng-click="showDetailsPan=true"><span class="glyphicon glyphicon-pencil"></span></div>
-      <div class="model-done" ng-show="showDetailsPan" ng-click="showDetailsPan=false"><span class="glyphicon glyphicon-ok"></span></div>
-      <div class="model-remove" ng-if="!entity.$root$"  ng-click="removeEntity(entity)"><span class="glyphicon glyphicon-remove"></span></div>
-      <div class="model-summary">
-        <span ng-show="entity.description" class="comment glyphicon glyphicon-comment" uib-tooltip="{{entity.description}}"></span>
-        <span ng-if="!entity.$root$"><input type="checkbox" class="small" ng-model="entity.required"/>{{ t_prefix+'REQUIRED' | translate }}</span>
+<div class="js-row" ng-class="showDetailsPan?'t_bg':''" ng-init="showDetailsPan=false">
+  <!-- <span ng-hide="entity.$root$"><input class="model-key" type="text" ng-model="entity._key" />:</span> -->
+  <input class="model-title" type="text" ng-model="entity.title" />
+  <!-- <span model-type-selector></span> -->
+  <div class="model-icons">
+      <div class="model-info">
+        <span class="model-type"><span ng-class="entity.type" class="badge badge-default">{{t_prefix+entity.type.toUpperCase() | translate}}</span></span>
+        <span class="model-required"><span class="glyphicon glyphicon-asterisk" ng-click="entity.required = !entity.required" ng-class="{disabled:entity.$root$, 'text-danger': entity.required}" uib-tooltip="{{ (entity.$root$)?'':t_prefix+(entity.required?'REQUIRED':'NOT_REQUIRED') | translate }}" tooltip-append-to-body="true"></span></span>
+        <span class="model-comment glyphicon glyphicon-comment" ng-class="{'disabled':!entity.description}" uib-tooltip="{{entity.description?entity.description:(t_prefix+'NO_DESCRIPTION' | translate)}}"
+          tooltip-append-to-body="true"></span>
+      </div><div class="model-actions"><!--keep on same line to remove whitespace -->
+        <span class="obj-add glyphicon glyphicon-plus disabled"></span>
+        <span class="model-detail" ng-hide="showDetailsPan" ng-click="showDetailsPan=true"><span class="glyphicon glyphicon-pencil"></span></span>
+        <span class="model-done" ng-show="showDetailsPan" ng-click="showDetailsPan=false"><span class="glyphicon glyphicon-ok text-success"></span></span>
+        <span class="model-remove" ng-click="removeEntity(entity)"><span class="glyphicon glyphicon-remove"></span></span>
       </div>
-  </div>
-  <div class="model-det-cont" ng-show="showDetailsPan">
+    </div>
+    <div class="model-det-cont" ng-show="showDetailsPan">
       <div class="col-xs-6" style="border-right:1px solid #9E9E9E">
-          <div class="t_color bold">{{ t_prefix+'BASIC_INFO' | translate }}</div>
-          <div class="">
+        <div class="t_color bold">{{ t_prefix+'BASIC_INFO' | translate }}</div>
+        <div class="">
           <form class="form-horizontal form-compact model-detail-form" name="detailForm" role="form">
-              <div class="form-group" ng-if="!entity.$root$">
-                  <label class="control-label col-xs-2">{{ t_prefix+'NAME' | translate }}:</label>
-                  <div class="col-xs-9">
-                      <input type="text" class="form-control sm detail-ip" id="foldName" placeholder="{{ t_prefix+'FIELD_NAME' | translate }}" ng-model="entity._key">
-                  </div>
+            <div class="form-group" ng-if="!entity.$root$">
+              <label class="control-label col-xs-2">{{ t_prefix+'NAME' | translate }}:</label>
+              <div class="col-xs-9">
+                <input type="text" class="form-control sm detail-ip" id="foldName" placeholder="{{ t_prefix+'FIELD_NAME' | translate }}"
+                  ng-model="entity._key">
               </div>
-              <div class="form-group">
-                  <label class="control-label col-xs-2">{{ t_prefix+'DESCRIPTION' | translate }}:</label>
-                  <div class="col-xs-9">
-                      <textarea class="form-control" ng-model="entity.description"></textarea>
-                  </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-xs-2">{{ t_prefix+'DESCRIPTION' | translate }}:</label>
+              <div class="col-xs-9">
+                <textarea class="form-control" ng-model="entity.description"></textarea>
               </div>
-              <div class="form-group">
-                  <label class="control-label col-xs-2">{{ t_prefix+'DEFAULT' | translate }}:</label>
-                  <div class="col-xs-9">
-                      <input type="text" class="form-control sm detail-ip" ng-model="entity.default" />
-                  </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-xs-2">{{ t_prefix+'DEFAULT' | translate }}:</label>
+              <div class="col-xs-9">
+                <input type="text" class="form-control sm detail-ip" ng-model="entity.default" />
               </div>
+            </div>
           </form>
-          </div>
+        </div>
       </div>
       <div class="col-xs-6">
         <form class="form-inline model-detail-form" name="detailForm" role="form">
           <div class="t_color bold">{{ t_prefix+'VALIDATIONS' | translate }}</div>
           <div ng-if="!entity.$root$">
-              <div class="checkbox" style="padding: 2px 0;">
-                  <label><input type="checkbox" ng-model="entity.required" /> {{ t_prefix+'REQUIRED_Q' | translate }}</label>
-              </div>
+            <div class="checkbox" style="padding: 2px 0;">
+              <label><input type="checkbox" ng-model="entity.required" /> {{ t_prefix+'REQUIRED_Q' | translate }}</label>
+            </div>
           </div>
           <div class="form-group col-xs-12">
-              <label class="model-label-x">{{ t_prefix+'MIN_LENGTH' | translate }}:</label>
-              <input type="number" class="form-control sm detail-ip" ng-model="entity._minLength" min="0" placeholder=">=0" />
+            <label class="model-label-x">{{ t_prefix+'MIN_LENGTH' | translate }}:</label>
+            <input type="number" class="form-control sm detail-ip" ng-model="entity._minLength" min="0" placeholder=">=0" />
           </div>
           <div class="form-group col-xs-12">
-              <label class="model-label-x">{{ t_prefix+'MAX_LENGTH' | translate }}:</label>
-              <input type="number" class="form-control sm detail-ip" ng-model="entity._maxLength" min="0" placeholder=">=0" />
+            <label class="model-label-x">{{ t_prefix+'MAX_LENGTH' | translate }}:</label>
+            <input type="number" class="form-control sm detail-ip" ng-model="entity._maxLength" min="0" placeholder=">=0" />
           </div>
           <div class="form-group col-xs-12">
-              <label class="model-label-x">{{ t_prefix+'PATTERN' | translate }}:</label>
-              <input type="text" class="form-control sm detail-ip" ng-model="entity._pattern" min="0" />
+            <label class="model-label-x">{{ t_prefix+'PATTERN' | translate }}:</label>
+            <input type="text" class="form-control sm detail-ip" ng-model="entity._pattern" min="0" />
           </div>
           <div class="form-group col-xs-12">
-              <label class="model-label-x">{{ t_prefix+'FORMAT' | translate }}:</label>
-              <select class="form-control sm detail-ip" ng-model="entity._format">
-                  <option value="byte">{{ t_prefix+'BYTE' | translate }}</option>
-                  <option value="binary">{{ t_prefix+'BINARY' | translate }}</option>
-                  <option value="date">{{ t_prefix+'DATE' | translate }}</option>
-                  <option value="date-time">{{ t_prefix+'DATE_TIME' | translate }}</option>
-                  <option value="password">{{ t_prefix+'PASSWORD' | translate }}password</option>
-              </select>
+            <label class="model-label-x">{{ t_prefix+'FORMAT' | translate }}:</label>
+            <select class="form-control sm detail-ip" ng-model="entity._format">
+                    <option value="byte">{{ t_prefix+'BYTE' | translate }}</option>
+                    <option value="binary">{{ t_prefix+'BINARY' | translate }}</option>
+                    <option value="date">{{ t_prefix+'DATE' | translate }}</option>
+                    <option value="date-time">{{ t_prefix+'DATE_TIME' | translate }}</option>
+                    <option value="password">{{ t_prefix+'PASSWORD' | translate }}password</option>
+                </select>
           </div>
         </form>
       </div>

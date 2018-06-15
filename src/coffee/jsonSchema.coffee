@@ -14,16 +14,19 @@ angular.module 'json-schema-builder', ['pascalprecht.translate']
         parseSchema = (schema) ->
           switch schema.type
             when 'object'
+              schema.title = schema.title or '[No Name]'
               if not _.isEmpty(schema?.properties)
                 schema._properties ?= []
                 _.each schema.properties, (prop, key) ->
                   prop = angular.copy prop
                   prop._key = key
+                  prop.title = prop.title or key
                   prop = parseSchema prop
                   schema._properties.push prop
 
             when 'array'
               if not _.isEmpty(schema?.items)
+                schema.title = schema.title or '[No Name]'
                 schema.items._key = schema.items?.title
                 schema.items = parseSchema schema.items
             #   if not _.isEmpty(schema?.items)
