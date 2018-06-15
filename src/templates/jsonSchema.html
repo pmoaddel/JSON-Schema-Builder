@@ -1,20 +1,22 @@
 <div class="json-schema-builder">
-    <uib-tabset active="active">
-        <uib-tab index="0" heading="{{ t_prefix+'DESIGNER' | translate }}">
+  <uib-tabset active="active">
+    <uib-tab index="0" heading="{{ t_prefix+'DESIGNER' | translate }}">
 
-            <div>
-                <div class="main" style="background: #fff;padding:20px">
-                    <div ng-include="'json-schema-builder/templates/'+entity.type+'-schema.html' "></div>
-                    <pre>{{entity | json }}</pre>
-                </div>
-            </div>
+      <div>
+        <div class="main" style="background: #fff;padding:20px">
+          <ul>
+            <li ng-include="'json-schema-builder/templates/'+entity.type+'-schema.html' "></li>
+          </ul>
+          <pre>{{entity | json }}</pre>
+        </div>
+      </div>
 
 
 
-        </uib-tab>
-        <uib-tab index="1" heading="{{ t_prefix+'JSON_SCHEMA' | translate }}" select="convertObj2Schema()">
-            <pre>{{$schema}}</pre>
-        </uib-tab>
-    </uib-tabset>
-    
+    </uib-tab>
+    <uib-tab index="1" heading="{{ t_prefix+'JSON_SCHEMA' | translate }}" select="convertObj2Schema()">
+      <pre>{{$schema}}</pre>
+    </uib-tab>
+  </uib-tabset>
+
 </div>
